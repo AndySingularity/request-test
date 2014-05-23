@@ -12,7 +12,6 @@ gem 'devise'
 # gem 'cancan'
 
 # ORM
-# gem 'pg'
 gem 'mysql2'
 
 # Forms
