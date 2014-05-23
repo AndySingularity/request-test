@@ -1,46 +1,64 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+ruby '2.1.1'
+gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
+# Servers
+gem 'puma'
+gem 'unicorn'
+
+# Auth
+gem 'devise'
+# gem 'cancan'
+
+# ORM
 # gem 'pg'
 gem 'mysql2'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+# Forms
+gem 'simple_form'
+# gem 'nested_form'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
+# Assets
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'coffee-rails', '~> 4.0.0'
+gem 'slim'
+gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+# Other gems
+# gem 'paperclip'
+# gem 'kaminari'
+# gem 'bootstrap-kaminari-views'
+# gem 'debugger'
+# gem 'holder_rails' # Гем для 'временных' изображений любого размера
+# gem 'flutie' # Готовый хелпер под заголовки. https://github.com/thoughtbot/flutie
+gem 'annotate' # Аннотации в моделях. https://github.com/ctran/annotate_models
+gem 'humans' # => Гем для генерации Humans.txt
+gem 'reformal_turbolinks' # Для работы реформала с Turbolinks
+
+# gems for tests
+group :test do
+	gem 'rspec-rails'
+	gem 'selenium-webdriver'
+	gem 'capybara'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development do
+	gem 'better_errors'
+	gem 'capistrano'
+	gem 'meta_request'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :production do
+	gem 'rails_12factor'
+	gem 'google-analytics-rails'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+
+group :doc do
+	gem 'sdoc', require: false
+end
